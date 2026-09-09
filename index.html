@@ -1908,27 +1908,27 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
           <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#eaf7ff"/><stop offset="100%" stop-color="#ffffff"/>
+                <stop offset="0%" stop-color="#F6F1E3"/><stop offset="100%" stop-color="#FFFDF7"/>
               </linearGradient>
             </defs>
-            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(27,58,107,.45)" stroke-width="1.4"/>
+            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(184,145,47,.55)" stroke-width="1.4"/>
             <path d="M18 184 L130 110 L242 184" stroke="rgba(27,58,107,.28)" stroke-width="1" fill="none"/>
           </svg>
           <div class="env-flap-wrap" aria-hidden="true">
             <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
               <defs>
                 <linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#dff2fd"/><stop offset="100%" stop-color="#ffffff"/>
+                  <stop offset="0%" stop-color="#EDE5D2"/><stop offset="100%" stop-color="#FFFDF7"/>
                 </linearGradient>
               </defs>
-              <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(27,58,107,.45)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(184,145,47,.55)" stroke-width="1.5" stroke-linejoin="round"/>
             </svg>
           </div>
           <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
-            <circle cx="30" cy="30" r="28" fill="#9fd6ef"/>
-            <circle cx="30" cy="30" r="28" fill="none" stroke="#5aa3c4" stroke-width="2" opacity=".55"/>
-            <circle cx="30" cy="30" r="21.5" fill="none" stroke="#B8912F" stroke-width="1.1" opacity=".95"/>
-            <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#B8912F">DV</text>
+            <circle cx="30" cy="30" r="28" fill="#0E2247"/>
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#081833" stroke-width="2" opacity=".6"/>
+            <circle cx="30" cy="30" r="21.5" fill="none" stroke="#E3C978" stroke-width="1.1" opacity=".95"/>
+            <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#E3C978">DV</text>
           </svg>
         </div>
         <div class="env-open-content" aria-live="polite">
@@ -1959,8 +1959,8 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
               </linearGradient>
             </defs>
             <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#giftBox)" stroke="rgba(184,145,47,.65)" stroke-width="1.4"/>
-            <rect x="112" y="52" width="36" height="132" fill="rgba(184,145,47,.28)"/>
-            <line x1="18" y1="112" x2="242" y2="112" stroke="rgba(184,145,47,.30)" stroke-width="1.2"/>
+            <rect x="112" y="52" width="36" height="132" fill="rgba(211,170,64,.62)"/>
+            <line x1="18" y1="112" x2="242" y2="112" stroke="rgba(211,170,64,.55)" stroke-width="1.4"/>
           </svg>
           <div class="env-flap-wrap" aria-hidden="true">
             <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
@@ -2550,8 +2550,8 @@ function launchSparkle(){
       if(e.target.closest('a')) return;
       var open=b2.getAttribute('aria-expanded')==='true';
       b2.setAttribute('aria-expanded',String(!open));
-      bd2.classList.toggle('is-open',!open);
-      b2.classList.toggle('is-open',!open);
+      b2.classList.toggle('open',!open);
+      bd2.classList.toggle('open',!open);
       if(h2) h2.textContent = !open ? 'Toca para cerrar' : 'Toca para abrir';
     });
   })();
@@ -2814,6 +2814,14 @@ function initAll(){
 
 /* ─────────────── ARRANCAR ─────────────── */
 initEnvelope();
+</script>
+<script>
+/* Fallback de seguridad: si el reveal no dispara (IO/ScrollTrigger), mostrar igual */
+setTimeout(function(){
+  document.querySelectorAll('.env-interactive').forEach(function(e){
+    if(parseFloat(getComputedStyle(e).opacity) < .05) e.style.opacity = 1;
+  });
+}, 3000);
 </script>
 </body>
 </html>
