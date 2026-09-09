@@ -272,7 +272,16 @@ section{padding:64px 26px;}
 
 /* INTRO */
 .intro-wrap{
-  text-align:center;padding:56px 30px 48px;
+  text-align:center;padding:64px 34px 56px;
+  position:relative;isolation:isolate;
+}
+.intro-wrap::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/marco-floral.jpg') center center/cover no-repeat;
+  opacity:.62;
+  -webkit-mask-image:radial-gradient(ellipse 76% 74% at 50% 50%,transparent 34%,#000 80%),linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%);
+  mask-image:radial-gradient(ellipse 76% 74% at 50% 50%,transparent 34%,#000 80%),linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
 }
 .intro-text{
   font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
@@ -301,7 +310,9 @@ section{padding:64px 26px;}
 /* COUNTDOWN */
 #scd{overflow:visible;}
 .cd2-container{
-  background:linear-gradient(145deg,rgba(255,255,255,0.72),rgba(251,247,239,0.88));
+  background:
+    linear-gradient(145deg,rgba(255,255,255,0.86),rgba(251,247,239,0.92)),
+    url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/bg-countdown.jpg') center 20%/cover no-repeat;
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border:1px solid rgba(27,58,107,0.13);
   border-radius:28px;padding:40px 20px 36px;
@@ -624,7 +635,9 @@ section{padding:64px 26px;}
 /* ALBUM */
 .album-card{
   text-align:center;padding:36px 28px;
-  background:linear-gradient(155deg,#0A1A33 0%,#12294D 55%,#0A1A33 100%);
+  background:
+    linear-gradient(155deg,rgba(10,26,51,.90) 0%,rgba(18,41,77,.86) 55%,rgba(10,26,51,.92) 100%),
+    url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/bg-album.jpg') center center/cover no-repeat;
   border-radius:26px;
   border:1px solid rgba(184,145,47,0.16);
   box-shadow:0 14px 56px rgba(0,0,0,0.28);
