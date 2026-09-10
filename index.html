@@ -31,7 +31,7 @@
   --accent:#1B3A6B;
   --dark:#0E2247;
   --text:#141822;
-  --surface:#E9EEF7;
+  --surface:#EDEAE1;
   --card:#FFFFFF;
   --gold:#B8912F;
   --gold-light:#E3C978;
@@ -1001,9 +1001,9 @@ body{
 /* ════════ FONDO CONTINUO AZUL CIELO (sin costuras entre secciones) ════════ */
 .wrap{
   background:linear-gradient(180deg,
-    #FDFBF5 0%,   #F2EFE6 7%,   #E7EDF7 15%,  #FBF8F1 24%,
-    #EAF0F9 33%,  #FDFBF5 42%,  #E4EBF6 52%,  #FBF8F1 61%,
-    #EDF1F8 70%,  #FDFBF5 79%,  #E7EDF7 88%,  #FDFBF5 100%);
+    #FDFBF5 0%,   #F5F2E9 7%,   #ECE9E0 15%,  #FBF8F1 24%,
+    #EFEBE1 33%,  #FDFBF5 42%,  #EAE7DE 52%,  #FBF8F1 61%,
+    #F0EDE4 70%,  #FDFBF5 79%,  #ECE9E0 88%,  #FDFBF5 100%);
 }
 .sec,.sec--bg,.sec--surface,
 #fecha,#countdown,#quote,#familia,#ubicacion,#itinerario,
@@ -1013,7 +1013,7 @@ body{
 /* halo suave en las secciones sin asset — puro degradado de azul cielo */
 #fecha::before,#ubicacion::before,#footer::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(95% 70% at 50% 50%,rgba(255,255,255,.70) 0%,rgba(227,201,120,.13) 52%,rgba(227,201,120,0) 100%);
+  background:radial-gradient(95% 70% at 50% 50%,rgba(255,255,255,.42) 0%,rgba(27,58,107,.07) 52%,rgba(27,58,107,0) 100%);
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 26%,#000 74%,transparent 100%);
   mask-image:linear-gradient(to bottom,transparent 0,#000 26%,#000 74%,transparent 100%);
 }
@@ -1024,11 +1024,11 @@ body{
   position:absolute;inset:-2px;
   background-size:cover;background-position:center;background-repeat:no-repeat;
   pointer-events:none;z-index:0;
-  mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),
-             linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%),
+             linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
   mask-composite:intersect;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),
-                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
   -webkit-mask-composite:destination-in;
 }
 #quote,#familia,#itinerario,#dresscode,#regalos,#rsvp,#countdown{position:relative;isolation:isolate}
@@ -1136,12 +1136,12 @@ body{
 .hero-bride{line-height:1.22;padding-top:.18em;overflow:visible}
 .hero-content{overflow:visible}
 .script-title,.footer-names,.quote-sig,.ld-mono{line-height:1.24;padding-top:.10em}
-#quote .sec-flora{opacity:.20!important}
-#familia .sec-flora{opacity:.17!important}
-#itinerario .sec-flora{opacity:.15!important}
-#dresscode .sec-flora{opacity:.16!important}
-#regalos .sec-flora{opacity:.18!important}
-#rsvp .sec-flora{opacity:.15!important}
+#quote .sec-flora{opacity:.42!important}
+#familia .sec-flora{opacity:.36!important}
+#itinerario .sec-flora{opacity:.32!important}
+#dresscode .sec-flora{opacity:.34!important}
+#regalos .sec-flora{opacity:.38!important}
+#rsvp .sec-flora{opacity:.30!important}
 .itin-evt{
   font-family:'Cormorant Garamond',serif;font-weight:600;
   font-size:18px;line-height:1.45;letter-spacing:.3px;color:#123f57;
