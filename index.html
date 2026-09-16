@@ -1427,6 +1427,16 @@ body.gift-locked{overflow:hidden}
 .loc-hours{font-size:26px!important;line-height:1.5!important}
 .loc-city{font-size:19px!important}
 .fam-role{font-size:14px!important;letter-spacing:4px!important}
+
+/* Color reservado — corona en linea dentro de la frase */
+.dc-avoid-text{
+  max-width:330px;margin:0 auto;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;line-height:2;
+  color:var(--text);
+}
+.dc-crown--inline{
+  width:40px;height:29px;vertical-align:-.55em;margin:0 2px;
+}
 </style>
 </head>
 <body>
@@ -1832,7 +1842,7 @@ body.gift-locked{overflow:hidden}
 
       <!-- 7:30 — izquierda -->
       <div class="itin-item itin-row-l">
-        <div class="itin-time itin-tbc">Por confirmar</div>
+        <div class="itin-time">9:30 pm</div>
         <div class="itin-evt">Banquete</div>
       </div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
@@ -1842,17 +1852,9 @@ body.gift-locked{overflow:hidden}
       <div></div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div class="itin-item itin-item--r itin-row-r">
-        <div class="itin-time itin-tbc">Por confirmar</div>
+        <div class="itin-time">10:30 pm</div>
         <div class="itin-evt">Vals</div>
       </div>
-
-      <!-- 8:00 — izquierda -->
-      <div class="itin-item itin-row-l">
-        <div class="itin-time itin-tbc">Por confirmar</div>
-        <div class="itin-evt">Baile</div>
-      </div>
-      <div class="itin-dot-col"><div class="itin-dot"></div></div>
-      <div></div>
 
     </div>
   </section>
@@ -1925,35 +1927,31 @@ body.gift-locked{overflow:hidden}
     <p class="eyebrow rv">Etiqueta</p>
     <h2 class="script-title rv">Dress Code</h2>
     <p class="dc-subtitle rv">Formal</p>
-    <p class="dc-note rv">Queremos que luzcas espectacular en este día tan especial</p>
 
     <div class="dc-cards">
       <figure class="dc-card tex-card rv">
-        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/caballero.png" alt="Caballero con traje formal" loading="lazy">
+        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/caballero.png" alt="Caballero con vestimenta formal" loading="lazy">
         <figcaption>
           <span class="dc-card-lbl">Caballeros</span>
-          <span class="dc-card-sub">Traje formal</span>
+          <span class="dc-card-sub">Formal</span>
         </figcaption>
       </figure>
       <figure class="dc-card tex-card rv">
-        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/dama.png" alt="Dama con vestido largo" loading="lazy">
+        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/dama.png" alt="Dama con vestimenta formal" loading="lazy">
         <figcaption>
           <span class="dc-card-lbl">Damas</span>
-          <span class="dc-card-sub">Vestido largo</span>
+          <span class="dc-card-sub">Formal</span>
         </figcaption>
       </figure>
     </div>
 
     <div class="dc-avoid-section rv">
-      <span class="dc-avoid-label">Colores a evitar</span>
-      <div class="dc-crown-row">
-        <span class="dc-crown" style="background-color:#0100d8" title="Azul rey"></span>
-      </div>
+      <p class="dc-avoid-text">Agradecemos evitar el color <span class="dc-crown dc-crown--inline" style="background-color:#0100d8" role="img" aria-label="azul rey"></span> en tu vestimenta, ya que está reservado para quinceañera</p>
     </div>
 
     <div class="no-kids rv">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7 7 0 0 1 13 0"/><line x1="18" y1="3" x2="21" y2="6"/><line x1="21" y1="3" x2="18" y2="6"/></svg>
-      <span>Esta celebración es exclusiva para adultos. Agradecemos tu comprensión.</span>
+      <span>Esta celebración es exclusiva para adultos. No niños. Agradecemos tu comprensión.</span>
     </div>
   </section>
 
