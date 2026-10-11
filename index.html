@@ -1342,6 +1342,22 @@ body{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px}
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
   color:var(--accent);opacity:.85;
 }
+.album-btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 30px;margin-top:8px;
+  border-radius:999px;background:var(--dark);color:#fff;
+  font-family:'Cinzel',serif;font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;
+  box-shadow:0 8px 22px rgba(14,34,71,.22);
+}
+.album-btn:active{transform:scale(.97)}
+.album-qr{position:relative}
+.album-qr.bloqueado img{filter:blur(7px);opacity:.75}
+.album-qr.bloqueado .album-btn{pointer-events:none;opacity:.45}
+.album-qr:not(.bloqueado) + .album-aviso{display:none}
+.album-aviso{
+  max-width:320px;margin:22px auto 0;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:500;line-height:1.7;
+  color:var(--accent);opacity:.9;
+}
 
 /* ══════════ MESA DE REGALOS — caja + carrusel (boda-paola-e-ivan) ══════════ */
 #regalos{text-align:center}
@@ -2160,15 +2176,25 @@ body.gift-locked{overflow:hidden}
   <section id="album" class="sec sec--surface">
     <div class="sec-flora" style="background-image:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-diana-victoria/mariposas2.webp');opacity:.13"></div>
     <p class="eyebrow rv">Comparte el Momento</p>
-    <h2 class="script-title rv">Álbum Compartido</h2>
-    <p class="album-txt rv">Después del evento, sube tus fotos y videos al álbum compartido — será nuestro recuerdo colectivo de este día tan especial.</p>
-    <div class="album-qr rv">
-      <img id="albumQrImg"
-           src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fxv-diana-victoria.vercel.app&size=180x180&color=0E2247&bgcolor=ffffff&margin=6&qzone=1&ecc=M"
-           alt="Código QR del álbum compartido" width="180" height="180">
-      <span class="album-qr-lbl">Escanea para abrir el álbum</span>
-      <span class="album-qr-note">El enlace estará disponible muy pronto</span>
+    <h2 class="script-title rv">Álbum de fotos</h2>
+    <p class="album-txt rv">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
+    <!-- Álbum de Elysium: el QR abre /album → panel-invitados.vercel.app/subir/xv-diana-victoria -->
+    <div class="album-qr rv" data-fecha="2026-11-20">
+      <img id="albumQrImg" src="qr-album.png" alt="Código QR del álbum de fotos" width="180" height="180">
+      <span class="album-qr-lbl">Escanea con la cámara</span>
+      <a class="album-btn" href="/album">Subir mis fotos</a>
     </div>
+    <p class="album-aviso rv">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la noche ✨</p>
+    <script>
+      /* Se desbloquea solo el día del evento (la base además rechaza fotos antes de tiempo) */
+      (function(){
+        var box = document.querySelector('.album-qr');
+        if(!box) return;
+        var p = box.dataset.fecha.split('-');
+        var abre = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0);
+        if(new Date() < abre) box.classList.add('bloqueado');
+      })();
+    </script>
   </section>
 
   <!-- ── ORNAMENTO B ── -->
